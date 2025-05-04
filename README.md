@@ -15,6 +15,18 @@ venv/Scripts/activate # (in Linux, use source venv/bin/activate)
 pip install -r requirements.txt
 ```
 
+[Alembic](https://alembic.sqlalchemy.org/en/latest/index.html) is used for data migration in the repo.
+
+To set up the database tables by running existing migration scripts:
+```bash
+alembic upgrade head
+```
+
+If you need to generate a new migration script that reflects changes in your models, run:
+```bash
+alembic revision --autogenerate -m "<description of the model changes>"
+```
+
 To run the API (in auto-reload mode):
 
 ```bash
@@ -34,6 +46,6 @@ npm install
 
 To run the frontend (in development mode):
 
-```
+```bash
 npm run dev
 ```
